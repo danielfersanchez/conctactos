@@ -22,11 +22,11 @@ namespace conctactos.Data
         }
         public async Task<List<Friendmodel>> GetFriendsAsync(int id)
         {
-            return  database.Table<Friendmodel>().Where(f => f.Id == id).FirstOrDefaultAsync();
+            return  database.Table<Friendmodel>().Where(f => f.ID == id).FirstOrDefaultAsync();
         }
         public Task<int> SavefriendAsync(Friendmodel friend)
         {
-            if(friend.Id != 0)
+            if(friend.id != 0)
             {
                 return database.UpdateAllAsync(friend);
             }

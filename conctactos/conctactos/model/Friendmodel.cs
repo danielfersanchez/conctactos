@@ -1,4 +1,5 @@
 ﻿using conctactos.viewmodel;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,10 +9,12 @@ namespace conctactos.model
     class Friendmodel : Notificacble
     {
         #region atributos
-        public int Id;
+        [PrimaryKey,AutoIncrement]
+        public int ID { set; get; }
         private string Nombre;
         private string telefono;
         private string Correo;
+        internal int id;
         #endregion
         #region propiedades
         public string correo
@@ -40,15 +43,7 @@ namespace conctactos.model
                 Nombre = value; }
         }
 
-        public int id
-        {
-            get { return Id; }
-            set
-            {
-                SetValue(ref Id, value);
-                Id = value;
-            }
-        }
+      
         #endregion
     }
 }
