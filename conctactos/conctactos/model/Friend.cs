@@ -19,7 +19,7 @@ namespace conctactos.model
             get { return Correo; }
             set
             {
-                SetValue(ref correo, value);
+                SetValue(ref Correo,value);
                 Correo = value; }
         }
 
@@ -27,13 +27,17 @@ namespace conctactos.model
         public string Telefono
         {
             get { return telefono; }
-            set { telefono = value; }
+            set {
+                SetValue(ref telefono, value);
+                telefono = value; }
         }
 
         public string nombre
         {
             get { return Nombre; }
-            set { Nombre = value; }
+            set {
+                SetValue(ref Nombre, value);
+                Nombre = value; }
         }
         #endregion
     }

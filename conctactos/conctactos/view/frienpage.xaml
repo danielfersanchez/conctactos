@@ -11,7 +11,7 @@
             <Label Text="email"></Label>
             <Entry Placeholder="Ingrse email" Keyboard="Email"></Entry>
         </StackLayout>
-        <Button Text="Guardar" HeightRequest="50" BackgroundColor="Navy" TextColor="Wheat" HorizontalOptions="FillAndExpand"></Button>
-        <Button Text="Eliminar" HeightRequest="50" BackgroundColor="Red" TextColor="White" HorizontalOptions="FillAndExpand"></Button>
+        <Button Text="Guardar" HeightRequest="50" BackgroundColor="Navy" TextColor="Wheat" HorizontalOptions="FillAndExpand" Command="{Binding SaveCommand}"></Button>
+        <Button Text="Eliminar" HeightRequest="50" BackgroundColor="Red" TextColor="White" HorizontalOptions="FillAndExpand" Command="{Binding DeleteCommand}"></Button>
     </ContentPage.Content>
 </ContentPage>
