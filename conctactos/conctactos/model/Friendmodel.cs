@@ -5,7 +5,7 @@ using System.Text;
 
 namespace conctactos.model
 {
-    class Friend : Notificacble
+    class Friendmodel : Notificacble
     {
         #region atributos
         public int Id;
@@ -38,6 +38,16 @@ namespace conctactos.model
             set {
                 SetValue(ref Nombre, value);
                 Nombre = value; }
+        }
+
+        public int id
+        {
+            get { return Id; }
+            set
+            {
+                SetValue(ref Id, value);
+                Id = value;
+            }
         }
         #endregion
     }

@@ -9,6 +9,7 @@ namespace conctactos.viewmodel
     {
         public Command SaveCommand { get; set; }
         public Command DeleteCommand { get; set; }
-
+        public bool IsEnabled { get; set; }
+        public friendviewmodel Friendviewmodel { get; set; }
     }
 }

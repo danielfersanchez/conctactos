@@ -5,13 +5,13 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Nombre"></Label>
-            <Entry Placeholder="ingrese nombre"></Entry>
+            <Entry Placeholder="ingrese nombre" Text="{Binding FriendModel.Nombre, Mode=TwoWay}"></Entry>
             <Label Text=" telefono"></Label>
-            <Entry Placeholder="(57) 000000-00000" Keyboard="Telephone"></Entry>
+            <Entry Placeholder="(57) 000000-00000" Keyboard="Telephone" Text="{Binding FriendModel.Telefono, Mode=TwoWay}"></Entry>
             <Label Text="email"></Label>
-            <Entry Placeholder="Ingrse email" Keyboard="Email"></Entry>
+            <Entry Placeholder="Ingrse email" Keyboard="Email" Text="{Binding FriendModel.Correo, Mode=TwoWay}"></Entry>
         </StackLayout>
         <Button Text="Guardar" HeightRequest="50" BackgroundColor="Navy" TextColor="Wheat" HorizontalOptions="FillAndExpand" Command="{Binding SaveCommand}"></Button>
-        <Button Text="Eliminar" HeightRequest="50" BackgroundColor="Red" TextColor="White" HorizontalOptions="FillAndExpand" Command="{Binding DeleteCommand}"></Button>
+        <Button Text="Eliminar" HeightRequest="50" BackgroundColor="Red" TextColor="White" HorizontalOptions="FillAndExpand" Command="{Binding DeleteCommand}" IsEnabled="{Binding IsEnabled}"></Button>
     </ContentPage.Content>
 </ContentPage>
