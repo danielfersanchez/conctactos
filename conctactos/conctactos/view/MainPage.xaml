@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:conctactos"
+             x:Class="conctactos.view.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <ListView Header="Conctatos" Footer="daniel" SeparatorColor="Green" HasUnevenRows="True" RowHeight="20">
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <VewCell>
+                        <StackLayout VerticalOptions="FillAndExpand" Padding="10" BackgroundColor="Orange">
+                            <Label TextColor="White" VerticalOptions="Center" BackgroundColor="AliceBlue"> </Label>
+                        </StackLayout>
+                    </VewCell>
+                </DataTemplate>                
+            </ListView.GroupHeaderTemplate>
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Label  Text="lista amigos" TextColor="Azure"></Label>
+                            <Label Text="lista" TextColor="Aquamarine"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Nombre"></Label>
+                            <Label Text="telefono"></Label>
+                            <Image Source="ic_launcher"></Image>
+                            </Grid>
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

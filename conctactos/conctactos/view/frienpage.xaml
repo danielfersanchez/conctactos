@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="conctactos.view.frienpage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nombre"></Label>
+            <Entry Placeholder="ingrese nombre"></Entry>
+            <Label Text=" telefono"></Label>
+            <Entry Placeholder="(57) 000000-00000" Keyboard="Telephone"></Entry>
+            <Label Text="email"></Label>
+            <Entry Placeholder="Ingrse email" Keyboard="Email"></Entry>
+        </StackLayout>
+        <Button Text="Guardar" HeightRequest="50" BackgroundColor="Navy" TextColor="Wheat" HorizontalOptions="FillAndExpand"></Button>
+        <Button Text="Eliminar" HeightRequest="50" BackgroundColor="Red" TextColor="White" HorizontalOptions="FillAndExpand"></Button>
+    </ContentPage.Content>
+</ContentPage>
