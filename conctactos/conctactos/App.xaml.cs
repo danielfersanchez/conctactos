@@ -10,7 +10,9 @@ namespace conctactos
 {
 	public partial class App : Application
 	{
-		public App ()
+        public static object Database { get; internal set; }
+
+        public App ()
 		{
 			InitializeComponent();
 
