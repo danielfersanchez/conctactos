@@ -20,13 +20,13 @@ namespace conctactos.Data
         {
             return await database.Table<Friendmodel>().ToListAsync();
         }
-        public async Task<List<Friendmodel>> GetFriendsAsync(int id)
+        public List<Friendmodel> GetFriends(int id)
         {
-            return  database.Table<Friendmodel>().Where(f => f.ID == id).FirstOrDefaultAsync();
+            return database.Table<Friendmodel>().Where(f => f.ID == id).FirstOrDefaultAsync();
         }
         public Task<int> SavefriendAsync(Friendmodel friend)
         {
-            if(friend.id != 0)
+            if(friend.ID != 0)
             {
                 return database.UpdateAllAsync(friend);
             }
@@ -34,6 +34,10 @@ namespace conctactos.Data
             {
                 return database.InsertAsync(friend);
             }
+        }
+        public Task<int>DeleteFriendAsync( Friendmodel friend)
+        {
+            return database.DeleteAsync(friend);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace conctactos.model
         private string Nombre;
         private string telefono;
         private string Correo;
-        internal int id;
+       
         #endregion
         #region propiedades
         public string correo
