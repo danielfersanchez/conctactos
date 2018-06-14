@@ -12,7 +12,7 @@ namespace conctactos.Data
         private readonly SQLiteAsyncConnection database;
         public FriendDatBase(string dbPath)
         {
-            database =new  SQLiteAsyncConnection(dbPath);
+            database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<Friendmodel>().Wait();
 
         }
@@ -23,7 +23,7 @@ namespace conctactos.Data
         public List<Friendmodel> GetFriends(int id)
         {
             return database.Table<Friendmodel>().Where(f => f.ID == id).FirstOrDefaultAsync();
-        }
+        } 
         public Task<int> SavefriendAsync(Friendmodel friend)
         {
             if(friend.ID != 0)

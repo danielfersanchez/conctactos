@@ -3,6 +3,7 @@ using conctactos.viewmodel;
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace conctactos.model
@@ -58,11 +59,34 @@ namespace conctactos.model
         {
             return friends;
         }
-        public IObservableCollection
-            <Grouping<string, Friendmodel>>
-            GetAllGrouped()
+        public ObservableCollection <Grouping<string, Friendmodel>>GetAllGrouped()
         {
+            var sorted =
+                            from f in Friendmodel
+                            orderby f.FirstName
+                            group f by f.FirstName[0].ToString()
+                            into theGroup
+                            select
+                            new Grouping<string, friendviewmodel>
+                            (theGroup.key, theGroup);
+            return new ObservableCollection<Grouping<string, Friendmodel>>(sorted);
+        }
 
+        public ObservableCollection<Grouping<string, Friendmodel>>GetAllGrouped()
+        {
+            IEnumerable<Grouping<string, Friendmodel>> sorted = new Grouping<string, Friendmodel>[0];
+            if(friends!= null)
+            {
+                sorted =
+                    from f in Friendmodel
+                    orderby f.FirstName
+                    group f by  f.FirstName[0].ToString()
+                    into theGroup
+                    select
+                    new Grouping<string, Friendmodel>
+                    (theGroup.key, theGroup);
+            }
+            return new ObservableCollection<Grouping<string, Friendmodel>>(sorted);
         }
         #endregion
     }
